@@ -8,9 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Platzisquare';
   lugares:any = [
-    {nombre: 'Floreria la gardenia'},
-    {nombre: 'Donas la pasadita'},
-    {nombre: 'Veterinaria Huellitas Felices'},
+    {active: true, nombre: 'Floreria la gardenia'},
+    {active: true, nombre: 'Donas la pasadita'},
+    {active: true, nombre: 'Veterinaria Huellitas Felices'},
+    {active: false, nombre: 'Sushi Sushiroll'},
+    {active: true, nombre: 'Hotel la Gracia'},
+    {active: false, nombre: 'Zapateria el Clavo'},
   ]
 
   constructor() {

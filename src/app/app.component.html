@@ -1,9 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <ul>
-  <!-- ngFOR in array -->
-  <li *ngFor="let lugar of lugares">
-    {{ lugar.nombre }}
-  </li>
+  <!-- ngIF in array directivas estructural empiezan con *-->
+  <ng-container *ngFor="let lugar of lugares">
+    <li *ngIf="lugar.active">
+      {{ lugar.nombre }}
+    </li>
+  </ng-container>
 </ul>
  
 
