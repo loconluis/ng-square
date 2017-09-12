@@ -7,17 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Platzisquare';
-  a = 3;
-  b = 5;
-  listo = false;
-  nombre:string = '';
-  apellido:string = '';
-  
-  constructor() {
-    setTimeout(() => { this.listo = true  }, 3000)
-  }
+  lugares:any = [
+    {nombre: 'Floreria la gardenia'},
+    {nombre: 'Donas la pasadita'},
+    {nombre: 'Veterinaria Huellitas Felices'},
+  ]
 
-  hacerAlgo() {
-    alert('Haciendo algo');
+  constructor() {
+    
   }
 }
