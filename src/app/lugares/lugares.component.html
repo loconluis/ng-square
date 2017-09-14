@@ -10,9 +10,11 @@
       <h2>Lugares Cercanos</h2>
       <ul class="list-group">
         <ng-container *ngFor="let lugar of lugares">
-          <li *ngIf="lugar.active" class="list-group-item">
-            {{ lugar.nombre }}
-          </li>
+          <a routerLink="/detalle/{{lugar.id}}">
+            <li *ngIf="lugar.active" class="list-group-item">
+              {{ lugar.nombre }}
+            </li>
+          </a>
         </ng-container>
       </ul>
     </div>
