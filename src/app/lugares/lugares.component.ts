@@ -15,10 +15,11 @@ export class LugaresComponent {
   constructor(private lugaresService: LugaresService) {
     lugaresService.getLugares()
       .subscribe(lugares => {
-        this.lugares = lugares.json();
+        this.lugares = lugares;
         let me = this;
         // pasar de objeto a un arreglo
         me.lugares = Object.keys(me.lugares).map(function (key) { return me.lugares[key] });
+        debugger;
       });
   }
 }
