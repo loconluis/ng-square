@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 
 @Injectable()
 export class LugaresService{
+  API_ENDPOINT = 'https://platzisquare-1505192655142.firebaseio.com';
+
   lugares:any = [
     {id: 1 , plan: 'pagado', cercania: 1, distancia: 1, active: true, nombre: 'Floreria la gardenia', description: 'soy un lindo lugar'},
     {id: 2 , plan: 'gratuito', cercania: 1, distancia: 1.8, active: true, nombre: 'Donas la pasadita', description: 'soy un lindo lugar'},
@@ -26,7 +28,9 @@ export class LugaresService{
   }
 
   public guardarLugar(lugar) {
-    this.afDB.database.ref(`lugares/${lugar.id}`).set(lugar);
+    // this.afDB.database.ref(`lugares/${lugar.id}`).set(lugar);
+    const headers = new Headers({ "Content-Type": "application/json" });
+    return this.http.post(this.API_ENDPOINT+'/lugares.json', lugar, {headers: headers} )
   }
 
   public editarLugar(lugar) {
