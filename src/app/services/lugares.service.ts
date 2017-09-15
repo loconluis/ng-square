@@ -20,7 +20,11 @@ export class LugaresService{
   }
 
   public getLugares() {
-    return this.afDB.list('lugares/');
+    // recibiendo datos a traves de sockets
+    // return this.afDB.list('lugares/');
+
+    // recibiendo datos a traves de http
+    return this.http.get(this.API_ENDPOINT+'/lugares.json');
   }
 
   public buscarLugar(id) {
@@ -28,7 +32,10 @@ export class LugaresService{
   }
 
   public guardarLugar(lugar) {
+    // enviando datos a traves de sockets
     // this.afDB.database.ref(`lugares/${lugar.id}`).set(lugar);
+
+    // enviando datos a traves de HTTP
     const headers = new Headers({ "Content-Type": "application/json" });
     return this.http.post(this.API_ENDPOINT+'/lugares.json', lugar, {headers: headers} )
   }
