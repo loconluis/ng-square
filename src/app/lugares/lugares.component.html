@@ -3,11 +3,6 @@
   <agm-marker *ngFor="let lugar of lugares" [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
 </agm-map>
 <br>
-<div class="cuadrado" [@contenedorAnimable]="state">
-  
-</div>
-<div class="btn btn-primary" (click)="animar()">Cambiar</div>
-
 <hr />
 <div class="container">
   <div class="row">
@@ -27,8 +22,16 @@
         </ng-container>
       </ul>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" [@contenedorAnimable]="state">
       <h2>Destacados</h2>
+      <ng-container *ngFor="let lugar of lugares">
+        <div class="bg-danger rectangle" *ngIf="lugar.plan == 'Pagado'">
+          <a routerLink="/crear/{{lugar.id}}">
+            <h3>{{ lugar.nombre | uppercase }}</h3> <i class="fa fa-star pull-right" aria-hidden="true"></i>
+          </a>
+          <p [innerHTML]="lugar.descripcion | linkifystr"></p>
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>

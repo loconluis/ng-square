@@ -14,3 +14,12 @@ agm-map {
   height: 200px;
   background-color: red;
 }
+
+.rectangle{
+  padding: 5px;
+  margin: 5px;
+}
+
+.fa-star {
+  color: yellow;
+}
