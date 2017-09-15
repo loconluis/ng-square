@@ -22,15 +22,15 @@ export class LugaresService{
 
   public getLugares() {
     // recibiendo datos a traves de sockets
-    // return this.afDB.list('lugares/');
+    return this.afDB.list('lugares/');
 
     // recibiendo datos a traves de http
     // return this.http.get(this.API_ENDPOINT+'/lugares.json');
-    return this.http.get(this.API_ENDPOINT+'/.json')
-      .map((resultado) => {
-        const data = resultado.json().lugares;
-        return data;
-      });
+    // return this.http.get(this.API_ENDPOINT+'/.json')
+    //   .map((resultado) => {
+    //     const data = resultado.json().lugares;
+    //     return data;
+    //   });
   }
 
   public buscarLugar(id) {
@@ -39,11 +39,11 @@ export class LugaresService{
 
   public guardarLugar(lugar) {
     // enviando datos a traves de sockets
-    // this.afDB.database.ref(`lugares/${lugar.id}`).set(lugar);
+    this.afDB.database.ref(`lugares/${lugar.id}`).set(lugar);
 
     // enviando datos a traves de HTTP
-    const headers = new Headers({ "Content-Type": "application/json" });
-    return this.http.post(this.API_ENDPOINT+'/lugares.json', lugar, {headers: headers} )
+    // const headers = new Headers({ "Content-Type": "application/json" });
+    // return this.http.post(this.API_ENDPOINT+'/lugares.json', lugar, {headers: headers} )
   }
 
   public editarLugar(lugar) {

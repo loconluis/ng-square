@@ -20,6 +20,7 @@ import { LugaresService } from './services/lugares.service';
 
 import { CrearComponent } from './crear/crear.component';
 import { HttpModule } from '@angular/http';
+import { LinkifystrPipe } from './pipes/linkifystr.pipe';
 
 
 export const firebaseConfig = {
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
     DetalleComponent,
     LugaresComponent,
     ContactoComponent,
-    CrearComponent
+    CrearComponent,
+    LinkifystrPipe
   ],
   imports: [
     BrowserModule,
