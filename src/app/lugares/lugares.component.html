@@ -2,6 +2,11 @@
 <agm-map [latitude]="lat" [longitude]="lng">
   <agm-marker *ngFor="let lugar of lugares" [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
 </agm-map>
+<br>
+<div class="cuadrado" [@contenedorAnimable]="state">
+  
+</div>
+<div class="btn btn-primary" (click)="animar()">Cambiar</div>
 
 <hr />
 <div class="container">
