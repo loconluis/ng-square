@@ -26,7 +26,7 @@ export class LugaresService{
 
     // recibiendo datos a traves de http
     // return this.http.get(this.API_ENDPOINT+'/lugares.json');
-    return this.http.get(this.API_ENDPOINT+'/.json')
+    return this.http.get(this.API_ENDPOINT+'/.js')
       .map((resultado) => {
         const data = resultado.json().lugares;
         return data;

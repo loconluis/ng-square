@@ -19,7 +19,7 @@ export class LugaresComponent {
         let me = this;
         // pasar de objeto a un arreglo
         me.lugares = Object.keys(me.lugares).map(function (key) { return me.lugares[key] });
-        debugger;
-      });
+      }, error => { console.log(error);
+      alert('Tenemos algo de dificultades , disculpe las molestias. Error: '+error.statusText) });
   }
 }
