@@ -25,6 +25,7 @@ import { LinkifystrPipe } from './pipes/linkifystr.pipe';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { AutorizacionService } from './services/autorizacion.service';
+import { MyGuardService } from './services/my-guard.service';
 
 
 export const firebaseConfig = {
@@ -44,7 +45,7 @@ const appRoutes: Routes = [
   {path: 'contacto', component: ContactoComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registro', component: RegistroComponent},
-  {path: 'crear/:id', component: CrearComponent},
+  {path: 'crear/:id', component: CrearComponent, canActivate: [MyGuardService]},
 ];
 
 @NgModule({
@@ -73,7 +74,7 @@ const appRoutes: Routes = [
     AngularFireAuthModule,
     HttpModule
   ],
-  providers: [LugaresService, AutorizacionService],
+  providers: [LugaresService, AutorizacionService, MyGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

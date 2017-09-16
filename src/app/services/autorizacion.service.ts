@@ -3,13 +3,15 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable()
 export class AutorizacionService {
-  constructor(private angularFireAuth: AngularFireAuth) {}
+  constructor(private angularFireAuth: AngularFireAuth) {
+    this.isLogged();
+  }
 
   public login = (email, password) => {
     this.angularFireAuth.auth.signInWithEmailAndPassword(email, password)
     .then( response => {
       alert('usuario inicio sesion con exito');
-      console.log(response);
+      // console.log(response);
     })
     .catch( error => { console.log('Error', error); });
   }
@@ -21,5 +23,9 @@ export class AutorizacionService {
       console.log(response);
     })
     .catch( error => { console.log('Error', error); });
+  }
+
+  public isLogged() {
+    return this.angularFireAuth.authState;
   }
 }
