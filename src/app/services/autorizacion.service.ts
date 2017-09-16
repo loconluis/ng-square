@@ -12,12 +12,12 @@ export class AutorizacionService {
   public facebookLogin() {
     this.angularFireAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         alert('Usuario loggeado con facebook');
         this.router.navigate(['lugares']);
       })
       .catch(error => {
-        console.log('Error', error);
+        // console.log('Error', error);
       });
   }
   public login = (email, password) => {
@@ -25,8 +25,8 @@ export class AutorizacionService {
     .then( response => {
       alert('usuario inicio sesion con exito');
       // console.log(response);
-    })
-    .catch( error => { console.log('Error', error); });
+    });
+    // .catch( error => { console.log('Error', error); });
     this.router.navigate(['lugares']);
   }
 
@@ -34,9 +34,9 @@ export class AutorizacionService {
     this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password)
     .then( response => {
       alert('usuario registrado con exito');
-      console.log(response);
-    })
-    .catch( error => { console.log('Error', error); });
+      // console.log(response);
+    });
+    // .catch( error => { console.log('Error', error); });
   }
 
   public isLogged() {

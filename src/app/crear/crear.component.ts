@@ -35,7 +35,7 @@ export class CrearComponent {
       .map(response => response.results);
   }
   seleccionarDireccion(direccion) {
-    console.log(direccion);
+    // console.log(direccion);
     this.lugar.calle = direccion.address_components[1].long_name + ' ' + direccion.address_components[0].long_name;
     this.lugar.ciudad = direccion.address_components[4].long_name;
     this.lugar.pais = direccion.address_components[6].long_name;
@@ -47,7 +47,7 @@ export class CrearComponent {
       .subscribe(result => {
         this.lugar.lat = result.json().results[0].geometry.location.lat;
         this.lugar.lng = result.json().results[0].geometry.location.lng;
-        if (this.id !== 'new'){
+        if (this.id !== 'new') {
           this.lugaresService.editarLugar(this.lugar);
           alert('Negocio editado con Exito');
         }else {
