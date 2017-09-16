@@ -34,6 +34,12 @@ export class CrearComponent {
       .map(response => response.json())
       .map(response => response.results);
   }
+  seleccionarDireccion(direccion) {
+    console.log(direccion);
+    this.lugar.calle = direccion.address_components[1].long_name + ' ' + direccion.address_components[0].long_name;
+    this.lugar.ciudad = direccion.address_components[4].long_name;
+    this.lugar.pais = direccion.address_components[6].long_name;
+  }
 
   guardarLugar() {
     const direccion = `${this.lugar.calle},${this.lugar.ciudad},${this.lugar.pais}`;
