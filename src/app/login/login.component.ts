@@ -9,6 +9,5 @@ import { AutorizacionService } from '../services/autorizacion.service';
 export class LoginComponent {
   constructor(private autorizacionService: AutorizacionService) {
     this.autorizacionService.login('email', 'password');
-    this.autorizacionService.registro('email', 'password');
   }
 }
