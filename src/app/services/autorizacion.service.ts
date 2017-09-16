@@ -6,7 +6,12 @@ export class AutorizacionService {
   constructor(private angularFireAuth: AngularFireAuth) {}
 
   public login = (email, password) => {
-    console.log('Metodo de Login');
+    this.angularFireAuth.auth.signInWithEmailAndPassword(email, password)
+    .then( response => {
+      alert('usuario inicio sesion con exito');
+      console.log(response);
+    })
+    .catch( error => { console.log('Error', error); });
   }
 
   public registro = (email, password) => {

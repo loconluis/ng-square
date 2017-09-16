@@ -7,7 +7,12 @@ import { AutorizacionService } from '../services/autorizacion.service';
 })
 
 export class LoginComponent {
-  constructor(private autorizacionService: AutorizacionService) {
-    this.autorizacionService.login('email', 'password');
+  sesion: any = {};
+
+  constructor(private autorizacionService: AutorizacionService) {}
+
+  login() {
+    this.autorizacionService.login(this.sesion.email, this.sesion.password);
   }
+
 }

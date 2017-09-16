@@ -3,12 +3,12 @@
     <div class="col-md-offset-4 col-md-4">
       <div class="well">
         <label for="">Email</label>
-        <input type="email" class="form-control">
+        <input type="email" class="form-control" [(ngModel)]="sesion.email">
         <br>
         <label for="">Contraseña</label>
-        <input type="password" class="form-control">
+        <input type="password" class="form-control" [(ngModel)]="sesion.password">
         <hr>
-        <a class="btn btn-primary btn-block">Login</a>
+        <a class="btn btn-primary btn-block" (click)="login()">Login</a>
         <a class="btn btn-default btn-block">Cancelar</a>
       </div>
     </div>
