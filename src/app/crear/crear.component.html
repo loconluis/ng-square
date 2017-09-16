@@ -14,6 +14,17 @@
   <textarea name="Descripcion" id="Descripcion" cols="30" rows="10" class="form-control" [(ngModel)]="lugar.descripcion"></textarea>
   <br>
   <h3>Datos de Dirección</h3>
+  <div class="well">
+    <form>
+      <h3>Buscar direccion en Google Maps</h3>
+      <input type="text" class="form-control" [formControl]="searchField">
+    </form>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let result of results$ | async">
+        {{ result.formatted_address }}
+      </li>
+    </ul>
+  </div>
   <label for="Calle">Calle y Numero</label>
   <input type="text" class="form-control" [(ngModel)]="lugar.calle">
   <label for="Ciudad">Ciudad</label>

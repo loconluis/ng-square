@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AutorizacionService } from './services/autorizacion.service';
-import { Observable } from 'rxjs';
-import 'rxjs/Rx';
+// tslint:disable-next-line:import-blacklist
+
 
 @Component({
   selector: 'app-root',
